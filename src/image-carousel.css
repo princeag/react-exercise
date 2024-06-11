@@ -1,0 +1,11 @@
+.image-carousel-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.carousel-wrapper{
+    position: relative;
+    border: 1px solid #000;
+    background-color: rgba(0,0,0,.5);
+    margin-bottom: 15px;
+}

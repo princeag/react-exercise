@@ -1,34 +1,34 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import DummyAppContent from './dummy-app'
+import ImageCarousel from './image-carousel'
+import Accordion from './accordion'
+import QuoteGenerator from './quote-generator'
+import ShoppingList from './shopping-list'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activePage, setActivePage] = useState('home')
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='app'>
+      <div className="left-panel">
+        <h2>Vite-react-app Exercise</h2>
+        <hr />
+        <ol className='menu'>
+          <li><a href="#" className={activePage == 'home' && 'active'} onClick={()=> setActivePage('home')}>Home page</a></li>
+          <li><a href="#" className={activePage == 'imageCarousel' && 'active'} onClick={()=> setActivePage('imageCarousel')}>Image Carousel</a></li>
+          <li><a href="#" className={activePage == 'accordion' && 'active'} onClick={()=> setActivePage('accordion')}>Accordion</a></li>
+          <li><a href="#" className={activePage == 'quoteGenerator' && 'active'} onClick={()=> setActivePage('quoteGenerator')}>Quote generator</a></li>
+          <li><a href="#" className={activePage == 'shoppingList' && 'active'} onClick={()=> setActivePage('shoppingList')}>Shopping Cart</a></li>
+        </ol>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="right-panel">
+        {activePage === 'home' && <DummyAppContent/>}
+        {activePage === 'imageCarousel' && <ImageCarousel/>}
+        {activePage === 'accordion' && <Accordion/>}
+        {activePage === 'quoteGenerator' && <QuoteGenerator/>}
+        {activePage === 'shoppingList' && <ShoppingList/>}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
