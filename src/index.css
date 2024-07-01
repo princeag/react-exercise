@@ -29,7 +29,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-#root{
+#root {
   flex-grow: 1;
 }
 h1 {
@@ -40,15 +40,18 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  padding: 0.6em 0.6em;
+  font-size: 0.9em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button+button{
+.sm-btn {
+  padding: 5px 10px;
+}
+button + button {
   margin-left: 5px;
 }
 button:hover {
@@ -72,69 +75,71 @@ button:focus-visible {
   }
 }
 
-.accordion-wrapper{
+.accordion-wrapper {
   text-align: left;
   min-width: 600px;
 }
-.faq{
+.faq {
   padding: 15px 0;
   background-color: #f9f9f9;
   border-top: 2px solid #000;
 }
-.faq>h2{
+.faq > h2 {
   background-color: rgb(227, 209, 243);
   padding: 0px 10px;
   cursor: pointer;
   margin: 0;
   line-height: 2;
 }
-.faq.active>h2{
+.faq.active > h2 {
   background-color: blueviolet;
   color: #fff;
 }
-.faq>h2:hover{
+.faq > h2:hover {
   transition: all ease-out 200ms;
   background-color: rgb(208, 167, 244);
   color: #000;
 }
-.faq>p{
+.faq > p {
   display: none;
   text-indent: 5px;
 }
-.faq.active>p{
+.faq.active > p {
   display: block;
 }
 /* app page style */
-.app{
+.app {
   display: flex;
 }
-.left-panel{
+.left-panel {
   width: 250px;
   min-width: 250px;
   border-right: 1px solid #000;
 }
-.left-panel>.menu a.active {
+.left-panel > .menu a.active {
   color: #000;
   text-decoration-line: underline;
 }
-.right-panel{
+.right-panel {
   text-align: center;
   margin: 0 auto;
+  flex-grow: 1;
+  padding: 0 5%;
 }
 /* quote generator */
-.quote-generator> blockquote{
+.quote-generator > blockquote {
   background-color: whitesmoke;
   border-radius: 10px;
   padding: 2em;
   font-style: italic;
   min-width: 600px;
 }
-.quote-generator> blockquote>footer{
+.quote-generator > blockquote > footer {
   text-align: right;
   font-weight: bold;
 }
 /* shopping list */
-.form-input{
+.form-input {
   padding: 7px;
   margin-right: 10px;
   border-radius: 3px;
@@ -143,29 +148,34 @@ button:focus-visible {
   border-color: #f9f9f9;
   border-style: solid;
 }
-.cart{
+.cart {
   text-align: left;
 }
-.cart ol>li{
+.cart ol > li {
   font-size: 18px;
   font-weight: 600;
 }
-.text-danger{
+.text-danger {
   color: tomato;
 }
-.cart-item{
+.cart-item {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
 }
-.btn-danger{
+.btn-danger {
   color: tomato;
 }
-.btn-link{
+.btn-link {
   background-color: transparent;
   border: none;
   outline: none;
 }
-.btn-link:hover, .btn-link:focus-visible{
+.btn-link:hover,
+.btn-link:focus-visible {
   text-decoration: underline;
+}
+td,
+th {
+  padding: 10px;
 }
